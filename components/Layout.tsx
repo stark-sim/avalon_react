@@ -25,6 +25,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     <footer>
       <hr />
       <span>I'm here to stay (Footer)</span>
+      <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2023039885号</a>
     </footer>
   </div>
 )
