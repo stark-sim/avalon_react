@@ -31,6 +31,22 @@ const iconStyles: CSSProperties = {
 
 export default () => {
   const [loginType, setLoginType] = useState<LoginType>("phone");
+
+  const handleLogin = (values: {
+    username: string;
+    password: string;
+    mobile: string;
+    captcha: string;
+  }) => {
+    if (loginType === "account") {
+      console.log("must have account")
+    } else {
+      console.log("must have mobile")  
+    };
+    console.log(values)
+    console.log("handling login")
+  }
+
   return (
     // 要使用 CasApollo 中的 client 才能拿到 cookie
     <CasApollo>
@@ -48,6 +64,7 @@ export default () => {
                 <WeiboCircleOutlined style={iconStyles} />
               </Space>
             }
+            onFinish={handleLogin}
           >
             <Tabs
               centered
@@ -82,7 +99,7 @@ export default () => {
                   placeholder={"密码: ant.design"}
                   rules={[
                     {
-                      required: true,
+                      required: false,
                       message: "请输入密码！",
                     },
                   ]}
