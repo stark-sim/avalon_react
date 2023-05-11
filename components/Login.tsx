@@ -34,7 +34,7 @@ export default () => {
   const { message, notification, modal } = App.useApp();
   const [loginType, setLoginType] = useState<LoginType>("phone");
 
-  const handleLogin = (values: {
+  const handleLogin = async (values: {
     username: string;
     password: string;
     mobile: string;

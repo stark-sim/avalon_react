@@ -51,19 +51,18 @@ const IndexLayout = ({ children, title = "This is the default title" }: Props) =
     </Head>
     <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
       <Layout>
-        <Header style={headerStyle}>
-          <header>
+        <Header>
+          {/* <header>
             <nav>
               <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
               <Link href="/users">Users List</Link> |{" "}
               <a href="/api/users">Users API</a>
             </nav>
-          </header>
+          </header> */}
         </Header>
         <Content >{children}</Content>
         <Footer>
           <hr />
-          {/* <span>I'm here to stay (Footer)</span> */}
           <div>
             <a href="https://beian.miit.gov.cn/" target="_blank">
               <p
