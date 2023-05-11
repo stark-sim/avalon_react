@@ -53,7 +53,7 @@ export default () => {
     // 要使用 CasApollo 中的 client 才能拿到 cookie
     <CasApollo>
       <ProConfigProvider hashed={false}>
-        <div style={{ backgroundColor: "white" }}>
+        <div>
           <LoginForm
             logo="/avalon_logo2.png"
             title="圆桌骑士"

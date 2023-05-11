@@ -478,7 +478,7 @@ add-dom-event-listener@^1.1.0:
 
 antd@^5.4.7:
   version "5.4.7"
-  resolved "https://registry.npmmirror.com/antd/-/antd-5.4.7.tgz#8655f03fd7a3488f3d48327fe178e3d7e06a456d"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-5.4.7.tgz#8655f03fd7a3488f3d48327fe178e3d7e06a456d"
   integrity sha512-kFClbdlrultV1SJh8oxHSCCsO3iLGc6QFu0IIHGNuC4JHkDc2Ed94sk7XSmOTcENLcTd7BQYP0A4nK0VERp7vA==
   dependencies:
     "@ant-design/colors" "^7.0.0"

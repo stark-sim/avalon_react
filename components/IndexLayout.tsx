@@ -12,7 +12,7 @@ const headerStyle: React.CSSProperties = {
   height: 64,
   paddingInline: 50,
   lineHeight: '64px',
-  backgroundColor: '#7dbcea',
+  backgroundColor: '#f5f5f5',
 };
 
 const contentStyle: React.CSSProperties = {
@@ -20,7 +20,7 @@ const contentStyle: React.CSSProperties = {
   minHeight: 120,
   lineHeight: '120px',
   color: '#fff',
-  backgroundColor: '#108ee9',
+  backgroundColor: 'white',
 };
 
 const siderStyle: React.CSSProperties = {
@@ -51,7 +51,7 @@ const IndexLayout = ({ children, title = "This is the default title" }: Props) =
     </Head>
     <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
       <Layout>
-        <Header>
+        <Header style={headerStyle}>
           {/* <header>
             <nav>
               <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
