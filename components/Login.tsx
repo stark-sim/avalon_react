@@ -15,9 +15,10 @@ import {
   ProFormText,
   ProConfigProvider,
 } from "@ant-design/pro-components";
-import { message, Space, Tabs } from "antd";
+import { Space, Tabs } from "antd";
 import type { CSSProperties } from "react";
 import { useState } from "react";
+import { App } from "antd"
 
 type LoginType = "phone" | "account";
 
@@ -30,6 +31,7 @@ const iconStyles: CSSProperties = {
 };
 
 export default () => {
+  const { message, notification, modal } = App.useApp();
   const [loginType, setLoginType] = useState<LoginType>("phone");
 
   const handleLogin = (values: {
@@ -39,7 +41,7 @@ export default () => {
     captcha: string;
   }) => {
     if (loginType === "account") {
-      console.log("must have account")
+      message.success("Must have account")
     } else {
       console.log("must have mobile")  
     };
@@ -47,13 +49,13 @@ export default () => {
     console.log("handling login")
   }
 
-  return (
+  return (  
     // 要使用 CasApollo 中的 client 才能拿到 cookie
     <CasApollo>
       <ProConfigProvider hashed={false}>
         <div style={{ backgroundColor: "white" }}>
           <LoginForm
-            logo="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
+            logo="/avalon_logo.png"
             title="友友游"
             subTitle="自用线下朋友聚会桌游助手"
             actions={

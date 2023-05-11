@@ -1,12 +1,12 @@
 import Link from "next/link";
-import Layout from "../components/Layout";
+import IndexLayout from "../components/IndexLayout";
 
 import Login from "../components/Login";
 
 const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
+  <IndexLayout title="Home | Next.js + TypeScript Example">
     <Login />
-  </Layout>
+  </IndexLayout>
 );
 
 export default IndexPage;
