@@ -55,7 +55,7 @@ export default () => {
       <ProConfigProvider hashed={false}>
         <div>
           <LoginForm
-            logo="/avalon_logo2.png"
+            logo="/avalon_logo_clean.png"
             title="圆桌骑士"
             subTitle="自用线下朋友聚会桌游助手"
             actions={
