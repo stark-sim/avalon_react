@@ -3,46 +3,48 @@ import Link from "next/link";
 import Head from "next/head";
 
 import Apollo from "./Apollo";
-import { Layout, Space } from 'antd';
+import { Layout, Space } from "antd";
 const { Header, Footer, Content } = Layout;
 
 const headerStyle: React.CSSProperties = {
-  textAlign: 'center',
-  color: '#fff',
+  textAlign: "center",
+  color: "#fff",
   height: 64,
   paddingInline: 50,
-  lineHeight: '64px',
-  backgroundColor: '#f5f5f5',
+  lineHeight: "64px",
+  backgroundColor: "#f5f5f5",
 };
 
 const contentStyle: React.CSSProperties = {
-  textAlign: 'center',
+  textAlign: "center",
   minHeight: 120,
-  lineHeight: '120px',
-  color: '#fff',
-  backgroundColor: 'white',
+  lineHeight: "120px",
+  color: "#fff",
+  backgroundColor: "white",
 };
 
 const siderStyle: React.CSSProperties = {
-  textAlign: 'center',
-  lineHeight: '120px',
-  color: '#fff',
-  backgroundColor: '#3ba0e9',
+  textAlign: "center",
+  lineHeight: "120px",
+  color: "#fff",
+  backgroundColor: "#3ba0e9",
 };
 
 const footerStyle: React.CSSProperties = {
-  textAlign: 'center',
-  color: '#fff',
-  backgroundColor: '#7dbcea',
+  textAlign: "center",
+  color: "#fff",
+  backgroundColor: "#7dbcea",
 };
-
 
 type Props = {
   children?: ReactNode;
   title?: string;
 };
 
-const IndexLayout = ({ children, title = "This is the default title" }: Props) => (
+const IndexLayout = ({
+  children,
+  title = "This is the default title",
+}: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -51,16 +53,14 @@ const IndexLayout = ({ children, title = "This is the default title" }: Props) =
     </Head>
     <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
       <Layout>
-        <Header style={headerStyle}>
-          {/* <header>
+        {/* <header>
             <nav>
               <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
               <Link href="/users">Users List</Link> |{" "}
               <a href="/api/users">Users API</a>
             </nav>
           </header> */}
-        </Header>
-        <Content >{children}</Content>
+        <Content>{children}</Content>
         <Footer>
           <hr />
           <div>
