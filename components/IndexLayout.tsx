@@ -51,15 +51,8 @@ const IndexLayout = ({
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
-      <Layout>
-        {/* <header>
-            <nav>
-              <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
-              <Link href="/users">Users List</Link> |{" "}
-              <a href="/api/users">Users API</a>
-            </nav>
-          </header> */}
+    <Layout>
+      <Space direction="vertical" style={{ width: "100%" }} size={[0, 48]}>
         <Content>{children}</Content>
         <Footer>
           <hr />
@@ -102,8 +95,8 @@ const IndexLayout = ({
             </a>
           </div>
         </Footer>
-      </Layout>
-    </Space>
+      </Space>
+    </Layout>
   </div>
 );
 
