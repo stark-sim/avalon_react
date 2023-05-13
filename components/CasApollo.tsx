@@ -8,7 +8,7 @@ import {
 import { ReactNode } from "react";
 
 const _client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
-  uri: "https://rosabi.cn/cas/api/graphql/",
+  uri: "https://rosabi.cn/cas/api/graphql",
   cache: new InMemoryCache(),
 });
 
