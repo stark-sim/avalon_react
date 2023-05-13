@@ -15,16 +15,17 @@ import {
   ProFormText,
   ProConfigProvider,
 } from "@ant-design/pro-components";
-import { Space, Tabs } from "antd";
+import { Space, Tabs, message } from "antd";
 import type { CSSProperties } from "react";
 import { useState } from "react";
-import { App } from "antd"
+import { App } from "antd";
+import Logging from "./auth/logging";
 
 type LoginType = "phone" | "account";
 
 const iconStyles: CSSProperties = {
   marginInlineStart: "16px",
-  color: "rgba(0, 0, 0, 0.2)",
+  // color: "rgba(0, 0, 0, 0.2)",
   fontSize: "24px",
   verticalAlign: "middle",
   cursor: "pointer",
@@ -33,6 +34,8 @@ const iconStyles: CSSProperties = {
 export default () => {
   const { message, notification, modal } = App.useApp();
   const [loginType, setLoginType] = useState<LoginType>("phone");
+  const [isLogging, setIsLogging] = useState<boolean>(false);
+  const [phone, setPhone] = useState<string>("");
 
   const handleLogin = async (values: {
     username: string;
@@ -41,19 +44,35 @@ export default () => {
     captcha: string;
   }) => {
     if (loginType === "account") {
-      message.success("Must have account")
+      setIsLogging(true);
+      setPhone(values.username);
     } else {
-      console.log("must have mobile")  
-    };
-    console.log(values)
-    console.log("handling login")
-  }
+      console.log("must have mobile");
+    }
+    console.log(values);
+    console.log("handling login");
+  };
 
-  return (  
+  const tabItems: {
+    key: string;
+    label: string;
+  }[] = [
+    {
+      key: "account",
+      label: "账号密码登录",
+    },
+    {
+      key: "phone",
+      label: "手机号登录",
+    },
+  ];
+
+  return (
     // 要使用 CasApollo 中的 client 才能拿到 cookie
     <CasApollo>
       <ProConfigProvider hashed={false}>
         <div>
+          {isLogging === true && <Logging phone={phone}></Logging>}
           <LoginForm
             logo="/avalon_logo_clean.png"
             title="圆桌骑士"
@@ -71,11 +90,9 @@ export default () => {
             <Tabs
               centered
               activeKey={loginType}
+              items={tabItems}
               onChange={(activeKey) => setLoginType(activeKey as LoginType)}
-            >
-              <Tabs.TabPane key={"account"} tab={"账号密码登录"} />
-              <Tabs.TabPane key={"phone"} tab={"手机号登录"} />
-            </Tabs>
+            ></Tabs>
             {loginType === "account" && (
               <>
                 <ProFormText
