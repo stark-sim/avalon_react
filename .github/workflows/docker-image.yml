@@ -15,7 +15,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Configure DNS
-      run: echo "nameserver tennis.dnspod.net" | sudo tee /etc/resolv.conf
+      run: |
+        echo "nameserver tennis.dnspod.net" | sudo tee /etc/resolv.conf
+        echo "nameserver seven.dnspod.net | sudo tee -a /etc/resolv.conf"
+        echo "nameserver 8.8.8.8 | sudo tee -a /etc/resolv.conf"
+        echo "nameserver 8.8.4.4 | sudo tee -a /etc/resolv.conf"
+
 
     - uses: actions/checkout@v3
     - name: Build the Docker image
