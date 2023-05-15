@@ -13,17 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Configure DNS
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
       run: |
         echo "nameserver tennis.dnspod.net" | sudo tee /etc/resolv.conf
         echo "nameserver seven.dnspod.net | sudo tee -a /etc/resolv.conf"
         echo "nameserver 8.8.8.8 | sudo tee -a /etc/resolv.conf"
         echo "nameserver 8.8.4.4 | sudo tee -a /etc/resolv.conf"
-
-
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: |
+        
         docker login harbor.rosabi.cn -u admin -p ${{ secrets.HARBOR_SECRET }} 
         docker buildx create --use
         docker buildx build . --platform=linux/amd64,linux/arm64 --file Dockerfile --push --tag harbor.rosabi.cn/library/starksim/avalon_react:latest
