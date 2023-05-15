@@ -17,4 +17,4 @@ jobs:
       run: |
         docker login harbor.rosabi.cn -u admin -p ${{ secrets.HARBOR_SECRET }}
         docker buildx create --use
-        docker buildx build . --platform=linux/amd64,linux/arm64 --file Dockerfile --push --tag harbor.rosabi.cn/library/starksim/avalon_react:latest
+        docker buildx build . --platform=linux/amd64,linux/arm64 --file Dockerfile --push --tag harbor.rosabi.cn/library/avalon_react:latest
