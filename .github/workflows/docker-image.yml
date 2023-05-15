@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: docker/login-action@v1
       with:
-        registry: harbor.example.cn
+        registry: harbor.rosabi.cn
         username: admin
         password: ${{ secrets.HARBOR_SECRET }}
 
