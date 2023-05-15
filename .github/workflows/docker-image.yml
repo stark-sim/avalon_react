@@ -13,11 +13,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: docker/login-action@v1
+      with:
+        registry: harbor.example.cn
+        username: admin
+        password: ${{ secrets.HARBOR_SECRET }}
+
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-        echo "nameserver 119.29.29.29" | sudo tee /etc/resolv.conf
-        
-        docker login harbor.rosabi.cn -u admin -p ${{ secrets.HARBOR_SECRET }} 
+        # echo "nameserver 119.29.29.29" | sudo tee /etc/resolv.conf
+        # docker login harbor.rosabi.cn -u admin -p ${{ secrets.HARBOR_SECRET }}
         docker buildx create --use
         docker buildx build . --platform=linux/amd64,linux/arm64 --file Dockerfile --push --tag harbor.rosabi.cn/library/starksim/avalon_react:latest
