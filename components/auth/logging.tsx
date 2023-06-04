@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import LoadingComponent from "../loadding";
 
 const LOGIN = gql`
   query Login($req: loginReq!) {
@@ -11,21 +12,27 @@ const LOGIN = gql`
   }
 `;
 
+interface LoggingComponentProps {
+  phone: string
+}
+
 // 登录过程组件
-function Logging(value: {phone: string}) {
+const Logging: React.FC<LoggingComponentProps> = ({ phone }) => {
   console.log("logging...")
   const { loading, error, data } = useQuery(LOGIN, {
     variables: {
       req: {
-        phone: value.phone,
+        phone: phone
       },
     },
   });
 
-  if (loading) return <p>登录中。。。</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (loading) return <LoadingComponent/>;
+  if (error) return (
+    <div>Error: {error.message}</div>
+  );
 
-  return <p>登陆成功 {data}</p>;
+  return <p>登陆成功 {data.login.name}</p>;
 }
 
 export default Logging;
