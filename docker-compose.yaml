@@ -2,9 +2,9 @@ version: "3.8"
 
 services:
   app:
-    image: harbor.rosabi.cn/library/avalon_react
+    image: starksim/avalon_react
     ports:
-        - "127.0.0.1:82:3000"
+        - "127.0.0.1:81:3000"
     # volumes:
     #   - ./config.yaml:/app/github.com/stark-sim/avalon_backend/config.yaml
     container_name: "avalon_react"
