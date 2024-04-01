@@ -75,7 +75,7 @@ export default () => {
           {isLogging === true && <Logging phone={phone}></Logging>}
           <LoginForm
             logo="/avalon_logo_clean.png"
-            title="圆桌骑士"
+            title="友友游"
             subTitle="自用线下朋友聚会桌游助手"
             actions={
               <Space>

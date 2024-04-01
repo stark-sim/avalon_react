@@ -4,7 +4,7 @@ import IndexLayout from "../components/IndexLayout";
 import Login from "../components/Login";
 
 const IndexPage = () => (
-  <IndexLayout title="Home | Next.js + TypeScript Example">
+  <IndexLayout title="友友游">
     <Login />
   </IndexLayout>
 );
