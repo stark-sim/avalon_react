@@ -67,7 +67,7 @@ const IndexLayout = ({
                   color: "#939393",
                 }}
               >
-                粤ICP备2023039885号
+                粤ICP备2024233514号-1
               </p>
             </a>
             <a
