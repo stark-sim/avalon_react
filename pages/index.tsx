@@ -4,7 +4,7 @@ import IndexLayout from "../components/IndexLayout";
 import Login from "../components/Login";
 
 const IndexPage = () => (
-  <IndexLayout title="友友游">
+  <IndexLayout title="三花D小池子">
     <Login />
   </IndexLayout>
 );
