@@ -72,7 +72,7 @@ const IndexLayout = ({
             </a>
             <a
               target="_blank"
-              href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030502009977"
+              href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030002003220"
               style={{
                 display: "inline-block",
                 textDecoration: "none",
