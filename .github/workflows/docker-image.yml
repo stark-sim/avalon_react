@@ -15,6 +15,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-        docker login -u starksim -p ${{ secrets.DOCKERHUB_SECRET }}
+        docker login www.starksim.com:5443 -u stark -p ${{ secrets.HARBOR_SECRET }}
         docker buildx create --use
-        docker buildx build . --platform=linux/amd64 --file Dockerfile --push --tag starksim/avalon_react:latest
+        docker buildx build . --platform=linux/amd64 --file Dockerfile --push --tag www.starksim.com:5443/harbor/library/avalon_react:latest

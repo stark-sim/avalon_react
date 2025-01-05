@@ -2,18 +2,18 @@ version: "3.8"
 
 services:
   app:
-    image: starksim/avalon_react
+    image: www.starksim.com:5443/harbor/library/avalon_react
     ports:
         - "127.0.0.1:81:3000"
     # volumes:
     #   - ./config.yaml:/app/github.com/stark-sim/avalon_backend/config.yaml
     container_name: "avalon_react"
-    networks:
-      default:
-        aliases:
-          - avalon_react
+#    networks:
+#      default:
+#        aliases:
+#          - avalon_react
 
-networks:
-  default:
-    name: graphql_federation
-    external: true
+#networks:
+#  default:
+#    name: graphql_federation
+#    external: true
